@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanji Reading Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <p class="eyebrow">JAPANESE LEARNING</p>
+      <h1>Kanji Reading Quiz</h1>
+      <p class="sub">Practice with a new random set every time.</p>
+    </header>
+
+    <section id="start-screen" class="panel">
+      <div class="big-kanji">漢字</div>
+      <h2>Ready to begin?</h2>
+      <p>50 multiple-choice questions</p>
+      <p>At the end, review your score and all correct and incorrect answers.</p>
+      <button id="start-btn" class="primary">Start Quiz</button>
+    </section>
+
+    <section id="quiz-screen" class="panel hidden" aria-live="polite">
+      <div class="quiz-top">
+        <span id="progress">Question 1 of 50</span>
+        <span id="score-live">Correct: 0</span>
+      </div>
+      <div class="progress-track"><div id="progress-bar"></div></div>
+      <p class="question-label">Choose the correct reading for this kanji.</p>
+      <div id="question-kanji" class="question-kanji">山</div>
+      <div id="options" class="options"></div>
+      <div id="feedback" class="feedback hidden"></div>
+      <div class="quiz-actions">
+        <button id="back-btn" class="secondary" disabled>Back</button>
+        <button id="next-btn" class="primary" disabled>Next Question</button>
+      </div>
+    </section>
+
+    <section id="result-screen" class="panel hidden">
+      <p class="eyebrow">RESULTS</p>
+      <h2>Quiz Complete!</h2>
+      <div class="result-score"><span id="final-score">0</span><small> / 50 points</small></div>
+      <p id="result-message"></p>
+      <div class="result-summary">
+        <div><strong id="correct-count">0</strong><span>Correct</span></div>
+        <div><strong id="wrong-count">0</strong><span>Incorrect</span></div>
+      </div>
+      <h3>Answer Review</h3>
+      <div class="review-filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="wrong">Incorrect Only</button>
+        <button class="filter" data-filter="correct">Correct Only</button>
+      </div>
+      <div id="review-list" class="review-list"></div>
+      <button id="restart-btn" class="primary">Start a New Random Quiz</button>
+    </section>
+    <footer>50 random questions selected from 320 kanji</footer>
+  </main>
+  <script src="kanji-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
